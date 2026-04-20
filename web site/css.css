@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&family=Poppins:wght@500&family=Special+Elite&display=swap');
+
+:root{
+    --backgroundcolor: #1E1E1E;
+    --text: #fff;
+    --accent: #00ff00;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    color: #fff;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--backgroundcolor);
+    overflow-x: hidden;
+}
+
+.navb {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.linksid {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.linksid li {
+    margin: 0 30px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.linksid li:hover {
+    transform: translateY(-2px);
+}
+
+.linksid a {
+    font-family: 'Special Elite', monospace;
+    font-size: 18px;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.linksid a:hover {
+    color: var(--accent);
+}
+
+.linksid li.active::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: translateY(-50%) scale(1); }
+    50% { transform: translateY(-50%) scale(1.2); }
+    100% { transform: translateY(-50%) scale(1); }
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.section > * {
+    position: relative;
+    z-index: 2;
+}
+
+.bg1 {
+    position: relative;
+}
+
+.bg1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(assets/image/backg1.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.4;
+    z-index: -1;
+}
+
+.bg2 {
+    position: relative;
+}
+
+.bg2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent), url(assets/image/backg2.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+.logoseicons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeInUp 1s ease-out;
+}
+
+.logogame img {
+    max-width: 80%;
+    height: auto;
+}
+
+.icons {
+    display: flex;
+    margin-top: 40px;
+}
+
+.icons a {
+    transition: transform 0.3s ease;
+}
+
+.icons a:hover {
+    transform: scale(1.1);
+}
+
+.icons img {
+    width: 60px;
+    height: 60px;
+    margin: 0 15px;
+    filter: brightness(0.8);
+    transition: filter 0.3s ease;
+}
+
+.icons img:hover {
+    filter: brightness(1);
+}
+
+h1 {
+    font-family: 'Special Elite', monospace;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    animation: fadeIn 1s ease-out 0.5s both;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    animation: fadeIn 1s ease-out 1s both;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    animation: fadeIn 1s ease-out 1.5s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .linksid li {
+        margin: 0 15px;
+    }
+    
+    .linksid a {
+        font-size: 16px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    p {
+        font-size: 1rem;
+    }
+    
+    .icons img {
+        width: 50px;
+        height: 50px;
+        margin: 0 10px;
+    }
+}
+
+
+h1 {
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
